@@ -21,12 +21,9 @@ jobs:
       uses: actions/setup-go@v3
       with:
         go-version: ${{ matrix.go_version }}
-    
-    - name: build docker compose
-      run: sudo apt-get install docker-compose -y
       
     - name: Create-DB
-      run: sudo docker compose up -d postgres
+      run: docker compose up -d postgres
 
     - name: Test
       run: go test -v main_test.go 
