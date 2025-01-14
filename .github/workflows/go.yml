@@ -21,6 +21,8 @@ jobs:
       with:
         go-version: ${{ matrix.go_version }}
       
+    - name: build
+      run: sudo apt-get install docker-compose -y
       
     - name: Create-DB
       run: docker-compose up -d postgres
