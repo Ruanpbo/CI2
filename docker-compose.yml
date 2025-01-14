@@ -5,7 +5,7 @@ services:
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
-      - POSTGRES_DB=root      
+      - POSTGRES_DB=root     
     ports:
       - "5432:5432"
     volumes:
@@ -17,7 +17,14 @@ services:
       PGADMIN_DEFAULT_EMAIL: "gui@alura.com"
       PGADMIN_DEFAULT_PASSWORD: "123456"
     ports:
-      - "54321:80"
+      - "5432:80"
     depends_on:
       - postgres
+    enviromente:
+      - db_host=localhost
+      - db_user=root
+      - db_password=root
+      - db_name=root
+      - db_port=5432
+
 
