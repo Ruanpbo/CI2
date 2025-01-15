@@ -9,9 +9,10 @@ on:
 jobs:
 
   test:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
+        os: ['ubuntu-latest', 'ubutun-24.04']
         go_version: ['1.18', '1.17', '>=1.18']
     steps:
     - uses: actions/checkout@v3
