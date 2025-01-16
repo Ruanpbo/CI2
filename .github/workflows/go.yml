@@ -14,7 +14,7 @@ jobs:
       PORT: ${{ secrets.PORT }}
       USER: ${{ secrets.USER }}
       PASSWORD: ${{ secrets.PASSWORD }}
-      DBNAME: ${{ secrets.NAME }}
+      NAME: ${{ secrets.NAME }}
     strategy:
       matrix:
         os: ['ubuntu-latest', 'ubuntu-24.04']
